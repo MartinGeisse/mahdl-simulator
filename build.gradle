@@ -26,4 +26,9 @@ dependencies {
 	compile 'commons-beanutils:commons-beanutils:1.9.2'
 	compile 'commons-codec:commons-codec:1.9'
 
+	// class file handling (for code generation)
+	compile group: 'org.ow2.asm', name: 'asm', version: '6.1.1'
+	compile group: 'org.ow2.asm', name: 'asm-commons', version: '6.1.1'
+	compile group: 'org.ow2.asm', name: 'asm-util', version: '6.1.1'
+
 }
