@@ -1,0 +1,24 @@
+
+
+Clock-Signale:
+- erste Idee: "clock" als data type
+	- Problem: In MaHDL kann kein Data Type den Verlauf über die Zeit erfassen, aber genau das unterscheidet "bit" von
+		"clock".
+	- Konkrete Ausprägungen:
+		- Konstanten und Register mit Typ "clock" machen keinen Sinn
+		- Logik im Clock-Pfad macht keinen Sinn
+		--> man könnte also nur Clock-Signale haben und diese durchschleifen, sonst gar nichts
+- Ähnliche Probleme hat man auch mit "bit"-Typ für Clock-Signale.
+	- sie werden nur expliziter
+	- aber man hat dann keinen Extra-Datentyp, der einem keine wirklichen Vorteile bringt.
+
+Letztendlich wird der Syntheseprozess das Problem lösen oder melden. Dort sind alles Bits.
+- Bits können in Registern stehen
+- Logik im Clockpfad wird vermutlich eine Warnung erzeugen (lässt sich zusätzlich auferlegen, auch in den MaHDL-Tools)
+	und hat ansonsten zumindest ein definiertes Verhalten.
+
+"man könnte also nur Clock-Signale haben und diese durchschleifen, sonst gar nichts"
+--> vielleicht ist es ja genau so sinnvoll!
+- keine Konstanten und Register mit Clock-Typ, sondern nur Ports und Signale
+- keine Operatoren, die Clock-Signale verarbeiten können (Clock-Enable funzt über "if", nicht über explizites Clock-Gating!)
+
